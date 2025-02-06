@@ -1,3 +1,41 @@
+<#
+.SYNOPSIS
+    Formats a collection of objects into a neatly rendered table with automatic column wrapping.
+
+.DESCRIPTION
+    Format-Table2 takes objects from the pipeline and examines all their properties to determine column widths,
+    alignments, and the appropriate table layout. It then constructs and outputs a table with borders. If the table
+    is wider than the host buffer, the columns are split into multiple blocks with specified repeat columns appearing
+    on each block.
+
+.PARAMETER InputObject
+    The objects to be formatted as a table. This parameter accepts pipeline input.
+
+.PARAMETER RepeatColumns
+    An array of column names that should be repeated in each wrapped block.
+    If not specified, the first discovered column is repeated by default.
+
+.EXAMPLE
+    Get-Process | Select-Object -First 3 | Format-Table2
+
+    Retrieves the first 3 processes and displays them in a formatted table. If the total table width exceeds the host's
+    buffer width, columns are wrapped and the first discovered column is repeated for each block.
+
+.EXAMPLE
+    Get-Process | Select-Object -First 3 | Format-Table2 -RepeatColumns "Name", "Id"
+
+    In this example, both "Name" and "Id" columns are repeated on every wrapped block of the table output.
+
+.NOTES
+    The function dynamically calculates optimal column widths based on both header labels and cell content,
+    ensuring that numeric values are right-aligned while textual values are left-aligned. It leverages
+    efficient collection types and .NET string builders to boost performance. However, despite these
+    optimizations, the function may not scale well for very large datasets, so please use it with caution
+    in high-volume scenarios.
+
+    AUTHOR: Terry Yang
+    https://github.com/0x7FFFFFFFFFFFFFFF/Format-Table2
+#>
 function Format-Table2 {
     [CmdletBinding()]
     [Alias("ft2")]
