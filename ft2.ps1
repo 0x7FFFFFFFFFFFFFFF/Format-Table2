@@ -262,6 +262,11 @@ function Format-Table2 {
                 $i++
             }
             else {
+                # Force add if no columns have been added to $block1 (to ensure progress)
+                if ($block1.Count -eq 0) {
+                    $block1 = $trial
+                    $i++
+                }
                 break
             }
         }
@@ -291,6 +296,11 @@ function Format-Table2 {
                     $j++
                 }
                 else {
+                    # If no column could be added from the remaining list, force add one so progress is made.
+                    if ($j -eq 0) {
+                        $block += $remaining[$j]
+                        $j++
+                    }
                     break
                 }
             }
