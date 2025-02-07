@@ -14,10 +14,6 @@ Sometimes you get results like this:
 
 ![](https://github.com/0x7FFFFFFFFFFFFFFF/Format-Table2/blob/main/assets/a.png?raw=true)
 
-Or this:
-
-![](https://github.com/0x7FFFFFFFFFFFFFFF/Format-Table2/blob/main/assets/b.png?raw=true)
-
 You might notice that some properties are truncated or hidden, leaving you with an incomplete view of your objects. `Format-Table2` is designed to rescue you from this limitation by dynamically calculating the perfect column widths based on both headers and cell content. Every piece of your data is displayed clearly - no more guessing or digging for hidden information!
 
 This is how `Format-Table2` presents your data:
