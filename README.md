@@ -24,6 +24,13 @@ Or this:
 
 ![](https://github.com/0x7FFFFFFFFFFFFFFF/Format-Table2/blob/main/assets/d.png?raw=true)
 
+Or if your terminal is wide enough, you get this:
+
+![](https://github.com/0x7FFFFFFFFFFFFFFF/Format-Table2/blob/main/assets/e.png?raw=true)
+
+And all of this is done automatically, without any extra effort on your part. Just pipe your objects into `Format-Table2` and enjoy the full view of your data!
+
+
 ## Features You'll Love
 
 - **Full Visibility:**  
