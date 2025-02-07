@@ -68,6 +68,15 @@ Get-Process | Select-Object -First 5 | Format-Table2 -RepeatColumns Name, Id
 
 This ensures you always have the context you need, even when your table wraps onto multiple lines.
 
+### Alias `ft2`
+
+For convenience, the function also comes with an alias `ft2`. You can use it just like `Format-Table`'s alias `ft`:
+
+```powershell
+Get-Process | Select-Object -First 5 | ft2
+```
+
+
 ## A Note on Performance
 
 `Format-Table2` leverages dynamic column width calculation and smart alignment to present your full data picture. It is built with efficient collection types and .NET string builders to improve performance. However, while it's perfect for everyday use and moderate-sized datasets, it might not be the best choice for extremely large volumes of data. Use with caution if you're dealing with high-volume outputs.
